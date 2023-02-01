@@ -1,5 +1,5 @@
-﻿namespace LocateCar.Model
-{
+﻿namespace LocateCar.Model;
+
     public class Car
     {
         public string Placa { get; set; } = null!;
@@ -17,4 +17,3 @@
             Brand = brand;
         }
     }
-}
