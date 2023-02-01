@@ -10,8 +10,14 @@
 
   <ItemGroup>
     <None Remove="Service\" />
+    <None Remove="View\" />
+    <None Remove="Util\" />
+    <None Remove="Service\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
+    <Folder Include="View\" />
+    <Folder Include="Util\" />
+    <Folder Include="Service\Interfaces\" />
   </ItemGroup>
 </Project>

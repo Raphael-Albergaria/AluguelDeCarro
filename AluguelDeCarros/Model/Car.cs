@@ -6,6 +6,11 @@
         public string Brand { get; set; } = null!;
         public bool IsAvailable { get; set; } = true;
 
+        public Car()
+        {
+
+        }
+
         public Car(string placa, string brand)
         {
             Placa = placa;

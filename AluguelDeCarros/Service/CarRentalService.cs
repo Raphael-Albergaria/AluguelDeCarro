@@ -1,4 +1,6 @@
-﻿using LocateCar.Model;
+﻿using System.Data;
+using LocateCar.Model;
+using LocateCar.Util;
 
 namespace LocateCar.Service
 {
@@ -23,11 +25,25 @@ namespace LocateCar.Service
 
             TimeSpan time = (TimeSpan)(carRental.Finish - carRental.Start);
             double basicPayment = 0, tax = 0;
+            int timeMinutes = time.Minutes;
+            int timeHours = time.Hours;
+            int timeDays = time.Days;
 
-            if (time.Hours <= 12.0)
+            if(time.Minutes > 0)
             {
-                basicPayment = time.Hours * PricePerHour;
+                timeMinutes = 0;
+                timeHours++;
             }
+
+            if (timeHours > 12.0)
+            {
+                timeHours = 0;
+                timeDays++;
+            }
+                basicPayment = PricePerDay * timeDays + PricePerHour * timeHours;
+
+
+
             tax = _taxService.Tax(basicPayment);
             carRental.Invoice = new Invoice(basicPayment, tax);
 

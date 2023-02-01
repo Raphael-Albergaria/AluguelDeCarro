@@ -19,6 +19,15 @@ namespace LocateCar.Model
             Car = car;
             Pessoa = pessoa;
         }
+
+        public override string ToString()
+        {
+            return $"Aluguel do carro : {Car.Brand} {Car.Placa}\n"+
+                $"Alugado por : {Pessoa.Name} || CPF : {Pessoa.Cpf}\n"+
+                $"Start : {Start} || Finish : {Finish}\n"+
+                $"Dados do Recibo\n"+
+                $"{Invoice}";
+        }
     }
 }
 

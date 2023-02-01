@@ -16,6 +16,12 @@ namespace LocateCar.Model
             BasicPaymenty = basicPaymenty;
             Tax = tax;
         }
+        public override string ToString()
+        {
+            return $"Pag. Base : R${BasicPaymenty:F2} | Taxa: R${Tax:F2}\n"+
+                $"Total Pago: R${TotalPayment:F2}";
+
+        }
     }
 }
 
